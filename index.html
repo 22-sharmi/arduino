@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Arduino Notes</title>
+  <style>
+    :root{--bg:#f7f8fb;--card:#ffffff;--accent:#2b6cb0;--muted:#65748b;--mono:Menlo,Monaco,monospace;}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#0f1724; margin:0; padding:32px; line-height:1.5;}
+    .container{max-width:900px; margin:0 auto;}
+    header{display:flex; gap:12px; align-items:center; margin-bottom:20px;}
+    header h1{font-size:28px; margin:0;}
+    .card{background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(15,23,36,0.06); padding:24px; margin-bottom:16px;}
+    h2{color:var(--accent); margin-top:0;}
+    p{margin:8px 0;}
+    ul{margin:8px 0 12px 20px;}
+    pre{background:#0b1220; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; font-family:var(--mono); font-size:14px;}
+    .muted{color:var(--muted); font-size:14px;}
+    .footer{font-size:13px; color:var(--muted); margin-top:8px;}
+    code.inline{background:#eef6ff;padding:2px 6px;border-radius:6px;font-family:var(--mono);}
+    @media (max-width:640px){body{padding:16px} header h1{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="font-size:36px">📘</div>
+      <h1>Arduino Notes</h1>
+    </header>
+
+    <section class="card">
+      <h2>🔹 Introduction to Arduino</h2>
+      <p><strong>What is Arduino?</strong><br>
+      Arduino is an <strong>open-source electronics platform</strong> based on easy-to-use <em>hardware (microcontrollers)</em> and <em>software (IDE)</em>. It enables beginners and professionals to build interactive projects.</p>
+
+      <p><strong>Why Arduino?</strong></p>
+      <ul>
+        <li>Simple and beginner-friendly</li>
+        <li>Inexpensive compared to other microcontrollers</li>
+        <li>Large community support and open-source libraries</li>
+      </ul>
+
+      <p><strong>Common Arduino Boards</strong></p>
+      <ul>
+        <li>Arduino Uno (most popular, ATmega328P)</li>
+        <li>Arduino Mega (more pins, more memory)</li>
+        <li>Arduino Nano (small, compact)</li>
+        <li>Arduino Leonardo, Due, ESP32-based boards, etc.</li>
+      </ul>
+
+      <p><strong>Applications of Arduino</strong></p>
+      <ul>
+        <li>Robotics</li>
+        <li>IoT (Internet of Things)</li>
+        <li>Home automation</li>
+        <li>Sensor-based projects</li>
+        <li>Educational purposes</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🔹 Arduino Hardware Basics</h2>
+      <ul>
+        <li><strong>Microcontroller</strong>: The brain of the Arduino board</li>
+        <li><strong>Digital I/O pins</strong>: For input (buttons, sensors) and output (LEDs, motors)</li>
+        <li><strong>Analog input pins</strong>: For reading varying sensor values (e.g., temperature, light)</li>
+        <li><strong>Power pins</strong>: 3.3V, 5V, GND</li>
+        <li><strong>USB port</strong>: For programming and power</li>
+        <li><strong>Reset button</strong>: Restarts the program</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🔹 Arduino Software (IDE)</h2>
+      <p>The <strong>Arduino IDE</strong> is used to write, compile, and upload code (called <em>sketches</em>) to the board. The language is based on <strong>C/C++</strong>.</p>
+
+      <p><strong>Structure of a sketch</strong></p>
+      <pre><code>void setup() {
+  // runs once at the beginning
+}
+
+void loop() {
+  // runs continuously after setup
+}</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>🔹 Arduino Programming Basics</h2>
+      <ol>
+        <li><strong>Variables &amp; Data Types</strong>: <code class="inline">int</code>, <code class="inline">float</code>, <code class="inline">char</code>, <code class="inline">boolean</code>, <code class="inline">String</code></li>
+        <li><strong>Functions</strong>: <code class="inline">pinMode()</code>, <code class="inline">digitalWrite()</code>, <code class="inline">digitalRead()</code>, <code class="inline">analogRead()</code>, <code class="inline">delay()</code></li>
+        <li><strong>Control Structures</strong>: <code class="inline">if</code>, <code class="inline">else</code>, <code class="inline">for</code>, <code class="inline">while</code>, <code class="inline">switch-case</code></li>
+        <li><strong>Comments</strong>: <code class="inline">// single-line</code>, <code class="inline">/* multi-line */</code></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>🔹 Example Program: Blink LED</h2>
+      <p>Pin 13 usually has a built-in LED on many Arduino boards.</p>
+      <pre><code>int led = 13;  // Pin 13 has a built-in LED
+
+void setup() {
+  pinMode(led, OUTPUT);  // set pin as output
+}
+
+void loop() {
+  digitalWrite(led, HIGH);  // turn LED on
+  delay(1000);              // wait 1 second
+  digitalWrite(led, LOW);   // turn LED off
+  delay(1000);              // wait 1 second
+}</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>🔹 Tips for Beginners</h2>
+      <ul>
+        <li>Always check <strong>board type</strong> and <strong>port</strong> in Arduino IDE before uploading.</li>
+        <li>Use the <strong>Serial Monitor</strong> (<code class="inline">Serial.begin(9600);</code>) for debugging.</li>
+        <li>Start with simple projects: LED blink, button input, sensor reading.</li>
+        <li>Gradually move to advanced projects: IoT, robotics, automation.</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>
